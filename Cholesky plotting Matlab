@@ -1,0 +1,31 @@
+x=[1000,2000,3000,4000,5000]; %% size the matrix A, n
+% following data y1,y2,and y3 represent the execution time of 
+% the Cholesky decomposition code for different matrix size n=1000,2000,3000,4000,5000, when 6, 4, 2 threads are used in parallelization, respectively
+
+% Note: every value in each following array is rounded to its first decimal place
+% y0 represents the execution time when no thread is used.
+y0=[43.2,110.3,198.3,243.1,308.3];
+y1=[23.3,45.8,112.3,143.0,169.3]; % 6 threads were used
+y2=[28.9,70.8,139.8,179.9,224.1]; % 4 threads were used
+y3=[35.0,89.9,158.8,203.1,279.7]; % 2 threads were used
+hold all
+for i=1:5
+scatter(x(i),y0(i),'X')
+scatter(x(i),y1(i),'X')
+scatter(x(i),y2(i),'X')
+scatter(x(i),y3(i),'X')
+line(x(i),y0(i))
+line(x(i),y1(i))
+line(x(i),y2(i))
+line(x(i),y3(i))
+end
+plot(x,y0,'-x')
+plot(x(5),y0(5),'r*')
+plot(x,y1,'-x')
+plot(x(5),y1(5),'b*')
+plot(x,y2,'-x')
+plot(x(5),y2(5),'g*')
+plot(x,y3,'-x')
+plot(x(5),y3(5),'y*')
+xlabel('size n')
+ylabel('running time t (s)')
