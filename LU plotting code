@@ -1,0 +1,31 @@
+x = [1000,2000,3000,4000,5000]; %% size the matrix A, n
+% following data y1,y2,..., y6 represent the execution time of 
+% the LU algorithm code for n=1000, 2000, ..., 10000, when 6, 4, 2 threads are used in parallelism, respectively
+
+% Note: every value in each following array is rounded to its first decimal place
+% y0 represents the execution time when no thread is used.
+y0=[33.4,98.6,128.7,140.4,196.5]; % no threads were used
+y1=[10.4,21.3,23.1,37.6,54.3]; % 6 threads were used
+y2=[19.5,34.1,43.3,48.9,67.5]; % 4 threads were used
+y3=[24.2,71.3,94.3,101.7,140.2]; % 2 threads were used
+hold all
+for i=1:5
+scatter(x(i),y0(i),'X')
+scatter(x(i),y1(i),'X')
+scatter(x(i),y2(i),'X')
+scatter(x(i),y3(i),'X')
+line(x(i),y0(i))
+line(x(i),y1(i))
+line(x(i),y2(i))
+line(x(i),y3(i))
+end
+plot(x,y0,'-x')
+plot(x(5),y0(5),'r*')
+plot(x,y1,'-x')
+plot(x(5),y1(5),'b*')
+plot(x,y2,'-x')
+plot(x(5),y2(5),'g*')
+plot(x,y3,'-x')
+plot(x(5),y3(5),'y*')
+xlabel('size n')
+ylabel('running time t (s)')
