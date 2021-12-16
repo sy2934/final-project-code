@@ -1,13 +1,13 @@
-x = [1000,2000,3000,4000,5000]; %% size the matrix A, n
+x = [5000,6000,7000,8000,9000]; %% size the matrix A, n
 % following data y1,y2,..., y6 represent the execution time of 
-% the LU algorithm code for n=1000,2000,3000,4000,5000, when 6, 4, 2 threads are used in parallelism, respectively
+% the LU algorithm for n=1000, 2000, ..., 10000, when 0, 2, 4, and 6 threads are used in openmp parallelization, respectively
 
 % Note: every value in each following array is rounded to its first decimal place
 % y0 represents the execution time when no thread is used.
-y0=[33.4,98.6,128.7,140.4,196.5]; % no threads were used
-y1=[10.4,21.3,23.1,37.6,54.3]; % 6 threads were used
-y2=[19.5,34.1,43.3,48.9,67.5]; % 4 threads were used
-y3=[24.2,71.3,94.3,101.7,140.2]; % 2 threads were used
+y0=[65.1,118.3,201.9,277.8,380.8]; % no threads were used
+y1=[22.9,36.6,65.1,86.3,124.5]; % 6 threads were used
+y2=[33.5,54.4,93.2,122.1,163.8]; % 4 threads were used
+y3=[43.2,74.3,132.7,164.3,215.4]; % 2 threads were used
 hold all
 for i=1:5
 scatter(x(i),y0(i),'X')
