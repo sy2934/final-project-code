@@ -70,7 +70,7 @@ int main()
    int stop_s = clock();
    
    //Compute the execution time of the code
-   cout << (stop_s - start_s)/double(CLOCKS_PER_SEC)*1000;
+   cout << (stop_s - start_s)/double(CLOCKS_PER_SEC);
 
 
    return 0;
